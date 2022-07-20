@@ -301,19 +301,15 @@ public class VodController extends BaseController {
             }
         });
         mPlayerTimeSkipBtn.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                try {
+          @@ -287,7 +287,7 @@ public void onClick(View view) {
                     int step = Hawk.get(HawkConfig.PLAY_TIME_STEP, 5);
-                    int et = mPlayerConfig.getInt("et");
-                    et += step;
-                    if (et > 60 * 10)
-                        et = 0;
-                    mPlayerConfig.put("et", et);
+                    int st = mPlayerConfig.getInt("st");
+                    st += step;
+                    if (st > 60 * 10)
+                   // if (st > 60 * 3)
+                        st = 0;
+                    mPlayerConfig.put("st", st);
                     updatePlayerCfgView();
-                    listener.updatePlayerCfg();
-                } catch (JSONException e) {
-                    e.printStackTrace();
                 }
             }
         });
